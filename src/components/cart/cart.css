@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.empty-cart-heading {
+    text-align: center;
+}
+
+.empty-cart-h3 {
+    font-size: 40px;
+    color: #33779e;
+    margin-bottom: 0px
+}
+
+.empty-cart-p {
+    font-size:16px;
+    font-weight: bold;
+}
+
+.cart-detail {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    margin: 2rem 0rem 2rem 0rem;
+}
+
+.cart-category {
+    font-size:18px;
+    font-weight: 400;
+    margin: .5rem 0rem .5rem 0rem;
+    text-transform: capitalize;
+}
+
+.cart-button-group {
+    display: flex;
+}
+
+.cart-button {
+    width: 20px;
+    font-size: 20px;
+    border: 1px solid #000000;
+    cursor: pointer;
+}
+
+.proceed {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 40px;
+    font-size:20px;
+    background-color: #fa6400;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    color: #fff;
+    cursor: pointer;
+}
+

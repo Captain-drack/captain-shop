@@ -1,0 +1,15 @@
+.banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-primary {
+    width: 130%;
+    margin: 2rem 0 5rem 0;
+}
+
+.banner-secondary {
+    width: 80%;
+}

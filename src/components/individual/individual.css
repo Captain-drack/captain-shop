@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+.card-styling {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2%;
+    margin-top: 10%;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.product-image {
+    padding-top: 20px;
+    width: 60%;
+    height: 50%;
+}
