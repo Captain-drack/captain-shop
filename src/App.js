@@ -4,6 +4,7 @@ import ProductDetail from "./components/product-detail/ProductDetail";
 import Home from "./components/home";
 import Cart from "./components/cart/Cart";
 import Login from "./components/login/Login";
+import SignUp from "./components/signup/SignUp";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/product/:productId" element={<ProductDetail />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
         <Route>404 Not Found</Route>
       </Routes>
     </div>
