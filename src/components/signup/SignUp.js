@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { Container } from "@mui/material";
@@ -7,16 +7,26 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export default function FullWidthTextField() {
-  const [name, setName] = React.useState("");
+  const initialData = {
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  };
+
+  const [formData, setFormData] = useState(initialData);
+
   let navigate = useNavigate();
 
-  const handleChange = (event) => {
-    setName(event.target.value);
+  const handleChange = (e) => {
+    let { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+    console.log(formData);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    let path = `/`;
+    let path = `/login`;
     navigate(path);
   };
 
@@ -38,8 +48,9 @@ export default function FullWidthTextField() {
                 id="outlined-name"
                 style={{ marginBottom: "2rem" }}
                 label="Full Name"
-                value={name}
+                value={formData.username}
                 type="name"
+                name="username"
                 onChange={handleChange}
               />
             </div>
@@ -48,8 +59,9 @@ export default function FullWidthTextField() {
                 id="outlined-name"
                 style={{ marginBottom: "2rem" }}
                 label="E-mail"
-                value={name}
+                value={formData.email}
                 type="email"
+                name="email"
                 onChange={handleChange}
               />
             </div>
@@ -58,8 +70,10 @@ export default function FullWidthTextField() {
                 id="outlined-uncontrolled"
                 style={{ marginBottom: "2rem" }}
                 label="Password"
-                defaultValue=""
+                value={formData.password}
                 type="password"
+                name="password"
+                onChange={handleChange}
               />
             </div>
             <div>
@@ -67,8 +81,10 @@ export default function FullWidthTextField() {
                 id="outlined-uncontrolled"
                 style={{ marginBottom: "2rem" }}
                 label="Confirm Password"
-                defaultValue=""
+                value={formData.confirmPassword}
                 type="password"
+                name="confirmPassword"
+                onChange={handleChange}
               />
             </div>
             <button className="sign-in" onClick={handleSubmit}>

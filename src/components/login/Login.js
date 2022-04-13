@@ -50,6 +50,7 @@ export default function FullWidthTextField() {
                 label="Password"
                 defaultValue=""
                 type="password"
+                onChange={handleChange}
               />
             </div>
             <button className="sign-in" onClick={handleSubmit}>
