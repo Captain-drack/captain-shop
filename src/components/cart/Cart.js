@@ -20,7 +20,6 @@ const Cart = () => {
     const { id, title, image, price, qty, category } = product;
     return (
       <Container>
-        <h4>My Cart ({state.length})</h4>
         <div className="cart-detail" key={id}>
           <img src={image} alt={title} width="15%" />
           <div style={{ marginLeft: "3rem" }}>
@@ -55,7 +54,6 @@ const Cart = () => {
           </div>
         </div>
         <hr />
-        <button className="proceed">Proceed to Checkout</button>
       </Container>
     );
   };

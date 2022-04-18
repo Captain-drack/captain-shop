@@ -5,7 +5,7 @@ import { Container } from "@mui/material";
 import "./signup.css";
 import { Link } from "react-router-dom";
 
-export default function FullWidthTextField() {
+function Signup() {
   const initialData = {
     username: "",
     email: "",
@@ -32,6 +32,7 @@ export default function FullWidthTextField() {
   useEffect(() => {
     console.log(errors);
     if (Object.keys(errors).length === 0 && submit) {
+      //object.key transfer object to array
       console.log(formData);
     }
   }, [errors]);
@@ -39,6 +40,7 @@ export default function FullWidthTextField() {
   const validate = (values) => {
     const error = {};
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
     if (!values.username) {
       error.username = "Username is required";
     }
@@ -129,7 +131,7 @@ export default function FullWidthTextField() {
                     fontWeight: "500",
                   }}
                 >
-                  New to E-commerce? Create an account{" "}
+                  If you have already an account. Then{" "}
                 </p>
                 <Link className="link-button-sign-up" to="/login">
                   Sing In
@@ -142,3 +144,5 @@ export default function FullWidthTextField() {
     </Container>
   );
 }
+
+export default Signup;
