@@ -5,6 +5,7 @@ import Home from "./components/home";
 import MainCart from "./components/cart/MainCart";
 import Login from "./components/login/Login";
 import SignUp from "./components/signup/SignUp";
+import "./app.css";
 
 function App() {
   return (
