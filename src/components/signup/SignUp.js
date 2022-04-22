@@ -35,6 +35,9 @@ const SignUp = () => {
       }}
       validationSchema={validate}
       onSubmit={(values) => {
+        const userData = JSON.parse(localStorage?.getItem("userData")) || [];
+        localStorage.setItem("userData", JSON.stringify([...userData, values]));
+        console.log([...userData, values]);
         console.log(values);
       }}
     >
