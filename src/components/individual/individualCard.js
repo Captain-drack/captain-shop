@@ -32,7 +32,7 @@ const IndividualCard = ({ productArray }) => {
               variant="body1"
               color="text.secondary"
             >
-              Price: ${price}
+              Price: ${price.toFixed(2)}
             </Typography>
             <Typography
               style={{ fontSize: "16px", fontWeight: "bold" }}

@@ -28,7 +28,7 @@ const Cart = () => {
               <span style={{ fontWeight: "500" }}>Category:</span> {category}
             </h6>
             <h6 style={{ fontSize: "30px", margin: "0px", fontWeight: "500" }}>
-              Price: $ {qty * price}
+              Price: $ {qty * price.toFixed(2)}
             </h6>
             <div className="cart-button-group">
               <Button

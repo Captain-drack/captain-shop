@@ -36,7 +36,7 @@ const ProductDetail = () => {
           <img className="product-image-1" src={image} alt={title} />
           <div className="particular-product">
             <h2 className="product">{title}</h2>
-            <h1 className="product-price">Price: $ {price}</h1>
+            <h1 className="product-price">Price: $ {price.toFixed(2)}</h1>
             <h2 className="product">Category: {category}</h2>
             <h2 className="product-description">Product Details</h2>
             <p className="product-para">{description}</p>
