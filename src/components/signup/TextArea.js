@@ -14,5 +14,4 @@ const TextArea = ({ label, ...props }) => {
     </div>
   );
 };
-
 export default TextArea;

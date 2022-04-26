@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik, Form } from "formik";
+import { useNavigate } from "react-router-dom";
 import Box from "@mui/material/Box";
 
 import { Container } from "@mui/material";
@@ -9,6 +10,13 @@ import TextArea from "./TextArea";
 import * as Yup from "yup";
 
 const SignUp = () => {
+  let navigate = useNavigate();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let path = `/`;
+    navigate(path);
+  };
+
   const validate = Yup.object({
     name: Yup.string()
       .min(4, "Must be 4 character or more")
@@ -35,6 +43,11 @@ const SignUp = () => {
       }}
       validationSchema={validate}
       onSubmit={(values) => {
+        // for path
+        let path = `/`;
+        navigate(path);
+
+        // for localStorage
         const userData = JSON.parse(localStorage?.getItem("userData")) || [];
         localStorage.setItem("userData", JSON.stringify([...userData, values]));
         console.log([...userData, values]);

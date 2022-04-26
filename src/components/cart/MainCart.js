@@ -4,13 +4,13 @@ import { useSelector } from "react-redux";
 import "./cart.css";
 import { Container } from "@mui/material";
 
-const MainCart = () => {
+const MainCart = (product) => {
   const state = useSelector((state) => state.productsReducer);
 
   return (
     <Container>
       {state.length !== 0 && (
-        <h4 className="hello">My Cart ({state.length})</h4>
+        <h4 className="hello">You have {state.length} items in your basket</h4>
       )}
       <Cart />
       {state.length !== 0 && (
