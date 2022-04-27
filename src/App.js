@@ -6,6 +6,7 @@ import MainCart from "./components/cart/MainCart";
 import Login from "./components/login/Login";
 import SignUp from "./components/signup/SignUp";
 import "./app.css";
+import Checkout from "./components/checkout/Checkout";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/cart" element={<MainCart />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/checkout" element={<Checkout />}></Route>
         <Route>404 Not Found</Route>
       </Routes>
     </div>

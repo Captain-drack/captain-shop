@@ -11,11 +11,6 @@ import * as Yup from "yup";
 
 const SignUp = () => {
   let navigate = useNavigate();
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    let path = `/`;
-    navigate(path);
-  };
 
   const validate = Yup.object({
     name: Yup.string()
@@ -48,10 +43,11 @@ const SignUp = () => {
         navigate(path);
 
         // for localStorage
-        const userData = JSON.parse(localStorage?.getItem("userData")) || [];
-        localStorage.setItem("userData", JSON.stringify([...userData, values]));
-        console.log([...userData, values]);
-        console.log(values);
+        const userData = JSON.parse(localStorage?.getItem("userData")) || {};
+        localStorage.setItem(
+          "userData",
+          JSON.stringify({ ...userData, values })
+        );
       }}
     >
       {(formik) => (

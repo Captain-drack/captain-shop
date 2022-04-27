@@ -11,18 +11,11 @@ import * as Yup from "yup";
 
 const Login = () => {
   const validate = Yup.object({
-    email: Yup.string()
-      .email("E-mail is invalid")
-      .required("E-mail is required"),
+    email: Yup.string().required("E-mail is required"),
     password: Yup.string().required("Password is required"),
   });
 
   let navigate = useNavigate();
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    let path = `/`;
-    navigate(path);
-  };
 
   return (
     <Formik
@@ -31,6 +24,30 @@ const Login = () => {
         password: "",
       }}
       validationSchema={validate}
+      onSubmit={(data) => {
+        // for path
+        let path = `/`;
+
+        const userInfo = JSON.parse(localStorage.getItem("userData"));
+        console.log(userInfo.values.email);
+
+        // for localStorage
+        if (userInfo) {
+          // getItem can return actual value or null
+          console.log(
+            "check password",
+            userInfo.values.password,
+            data.password
+          );
+          if (userInfo.values.password === data.password) {
+            navigate(path);
+          } else {
+            alert("Email or Password is not matching with our record");
+          }
+        } else {
+          console.log("Email or Password is not matching with our record");
+        }
+      }}
     >
       {(formik) => (
         <Container>
@@ -57,7 +74,7 @@ const Login = () => {
                     name="password"
                     type="password"
                   />
-                  <button className="sign-in" onClick={handleSubmit}>
+                  <button type="submit" className="sign-in">
                     Sign In
                   </button>
                   <div className="sign-up">
