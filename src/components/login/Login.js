@@ -1,15 +1,20 @@
-import React from "react";
-import { Formik, Form } from "formik";
-import Box from "@mui/material/Box";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-import { Container } from "@mui/material";
-import "./login.css";
 import { Link } from "react-router-dom";
+import { Container, IconButton, InputAdornment } from "@mui/material";
+import Box from "@mui/material/Box";
 import TextArea from "../signup/TextArea";
+import { Formik, Form } from "formik";
 import * as Yup from "yup";
+import "./login.css";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleClickShowPassword = () => setShowPassword(!showPassword);
+  const handleMouseDownPassword = () => setShowPassword(!showPassword);
+
   const validate = Yup.object({
     email: Yup.string().required("E-mail is required"),
     password: Yup.string().required("Password is required"),
@@ -72,7 +77,21 @@ const Login = () => {
                     style={{ marginBottom: "1rem" }}
                     label="Password"
                     name="password"
-                    type="password"
+                    type={showPassword ? "text" : "password"}
+                    InputProps={{
+                      // <-- This is where the toggle button is added.
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton
+                            aria-label="toggle password visibility"
+                            onClick={handleClickShowPassword}
+                            onMouseDown={handleMouseDownPassword}
+                          >
+                            {showPassword ? <Visibility /> : <VisibilityOff />}
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
                   />
                   <button type="submit" className="sign-in">
                     Sign In

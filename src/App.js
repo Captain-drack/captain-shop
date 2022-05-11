@@ -6,7 +6,7 @@ import MainCart from "./components/cart/MainCart";
 import Login from "./components/login/Login";
 import SignUp from "./components/signup/SignUp";
 import "./app.css";
-import Checkout from "./components/checkout/Checkout";
+import Checkout from "./components/checkout/checkoutLabel/CheckoutLabel";
 
 function App() {
   return (
