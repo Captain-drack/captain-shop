@@ -19,7 +19,6 @@ const productsReducer = (state = cart, action) => {
           },
         ];
       }
-      break;
 
     case "DELETECART":
       const exist1 = state.find((x) => x.id === product.id);
@@ -30,11 +29,9 @@ const productsReducer = (state = cart, action) => {
           x.id === product.id ? { ...x, qty: x.qty - 1 } : x
         );
       }
-      break;
 
     default:
       return state;
-      break;
   }
 };
 

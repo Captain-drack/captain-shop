@@ -34,7 +34,7 @@ const SignUp = () => {
     confirmPassword: "",
   };
 
-  const validate = Yup.object({
+  const validationSchema = Yup.object({
     name: Yup.string()
       .min(4, "Must be 4 character or more")
       .max(30, "Must be 30 character or less")
@@ -49,11 +49,6 @@ const SignUp = () => {
     confirmPassword: Yup.string()
       .oneOf([Yup.ref("password"), null], "Password must match")
       .required("Confirm password is required"),
-  });
-
-  const validationSchema = Yup.object({
-    email: Yup.string().required("E-mail is required"),
-    password: Yup.string().required("Password is required"),
   });
 
   const handleSubmit = (values) => {

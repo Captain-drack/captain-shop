@@ -11,17 +11,18 @@ const MainCart = () => {
   const state = useSelector((state) => state.productsReducer);
   const navigate = useNavigate();
 
-  const total = () => {
-    let price = 0;
-    state.map((ele, k) => {
-      price = ele.price * ele.qty + price;
-    });
-    setPrice(price);
-  };
-
   useEffect(() => {
+    const total = () => {
+      let price = 0;
+      state.map((ele, k) => {
+        price = ele.price * ele.qty + price;
+        return;
+      });
+      setPrice(price);
+    };
+
     total();
-  }, [total]);
+  }, []);
 
   return (
     <Container>

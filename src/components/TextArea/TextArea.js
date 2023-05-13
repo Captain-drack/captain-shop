@@ -4,7 +4,7 @@ import { ErrorMessage, useField } from "formik";
 import { Box } from "@mui/material";
 
 const TextArea = ({ label, ...props }) => {
-  const [field, meta] = useField(props);
+  const [field] = useField(props);
   return (
     <Box>
       <Box>
