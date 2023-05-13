@@ -6,7 +6,7 @@ import { Container } from "@mui/material";
 import { Box } from "@mui/system";
 import "./cart.css";
 
-const MainCart = (product) => {
+const MainCart = () => {
   const [price, setPrice] = useState(0);
   const state = useSelector((state) => state.productsReducer);
   const navigate = useNavigate();

@@ -7,9 +7,6 @@ import {
   Container,
   FormControlLabel,
   Grid,
-  InputLabel,
-  MenuItem,
-  Select,
   Typography,
 } from "@mui/material";
 import TextArea from "../../components/TextArea/TextArea";
