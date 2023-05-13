@@ -1,17 +1,17 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 import { ErrorMessage, useField } from "formik";
-import "./signup.css";
+import { Box } from "@mui/material";
 
 const TextArea = ({ label, ...props }) => {
   const [field, meta] = useField(props);
   return (
-    <div className="text-area">
-      <div>
+    <Box>
+      <Box>
         <TextField label={label} {...field} {...props} autoComplete="false" />
-      </div>
-      <ErrorMessage component="div" name={field.name} className="error-tag" />
-    </div>
+      </Box>
+      <ErrorMessage style={{ mt: "-.5rem", mb: ".5rem" }} name={field.name} />
+    </Box>
   );
 };
 export default TextArea;

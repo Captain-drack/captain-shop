@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Container } from "@mui/material";
-import IndividualCard from "../individual/individualCard";
+import IndividualCard from "../../pages/individual/individualCard";
 import "./productlist.css";
 
 const ProductList = () => {

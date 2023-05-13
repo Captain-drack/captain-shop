@@ -12,15 +12,16 @@ import {
   Select,
   Typography,
 } from "@mui/material";
-import TextArea from "../signup/TextArea";
+import TextArea from "../../components/TextArea/TextArea";
+// import TextArea from "../signup/TextArea";
 
 const Address = () => {
-  const [shippingCountries, setShippingCountries] = useState([]);
-  const [shippingCountry, setShippingCountry] = useState("");
-  const [shippingSubDivisions, setShippingSubDivisions] = useState([]);
-  const [shippingSubDivision, setShippingSubDivision] = useState("");
-  const [shippingOptions, setShippingOptions] = useState([]);
-  const [shippingOption, setShippingOption] = useState("");
+  // const [shippingCountries, setShippingCountries] = useState([]);
+  // const [shippingCountry, setShippingCountry] = useState("");
+  // const [shippingSubDivisions, setShippingSubDivisions] = useState([]);
+  // const [shippingSubDivision, setShippingSubDivision] = useState("");
+  // const [shippingOptions, setShippingOptions] = useState([]);
+  // const [shippingOption, setShippingOption] = useState("");
 
   const validate = Yup.object({
     firstName: Yup.string().required("First Name is required"),
