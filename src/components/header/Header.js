@@ -1,26 +1,28 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 import { useSelector } from "react-redux";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./header.css";
 import { Link } from "react-router-dom";
+import logoBlack from "../../assets/logo-black.png";
 
 export default function ButtonAppBar() {
   const state = useSelector((state) => state.productsReducer);
 
   return (
     <Container>
-      <div className="header">
+      <Box className="header">
         <Link to="/">
           <img
-            src="https://www.logopik.com/wp-content/uploads/edd/2018/07/Ecommerce-Logo-Vector.png"
-            alt="finmo logo"
+            src={logoBlack}
+            alt="captain_logo"
             className="logo"
+            style={{ width: "150px" }}
           />
         </Link>
-        <div>
+        <Box>
           <Link
             style={{
               textDecoration: "none",
@@ -59,8 +61,8 @@ export default function ButtonAppBar() {
               Login
             </Button>
           </Link>
-        </div>
-      </div>
+        </Box>
+      </Box>
     </Container>
   );
 }
