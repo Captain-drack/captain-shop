@@ -16,13 +16,13 @@ const MainCart = () => {
       let price = 0;
       state.map((ele, k) => {
         price = ele.price * ele.qty + price;
-        return;
+        return null; // Add a return statement here
       });
       setPrice(price);
     };
 
     total();
-  }, []);
+  }, [state]);
 
   return (
     <Container>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import {
@@ -10,16 +10,8 @@ import {
   Typography,
 } from "@mui/material";
 import TextArea from "../../components/TextArea/TextArea";
-// import TextArea from "../signup/TextArea";
 
 const Address = () => {
-  // const [shippingCountries, setShippingCountries] = useState([]);
-  // const [shippingCountry, setShippingCountry] = useState("");
-  // const [shippingSubDivisions, setShippingSubDivisions] = useState([]);
-  // const [shippingSubDivision, setShippingSubDivision] = useState("");
-  // const [shippingOptions, setShippingOptions] = useState([]);
-  // const [shippingOption, setShippingOption] = useState("");
-
   const validate = Yup.object({
     firstName: Yup.string().required("First Name is required"),
     lastName: Yup.string().required("Last Name is required"),

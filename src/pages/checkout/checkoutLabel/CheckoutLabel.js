@@ -13,13 +13,13 @@ import Payment from "../Payment";
 const steps = ["Billing address", "Payment details"];
 
 const Checkout = () => {
-  const [activeStep, _setActiveState] = useState(0);
+  const [activeStep, setActiveStep] = useState(0);
 
-  const Confirmation = () => {
+  const Confirmation = () => (
     <Container>
       <Typography>Confirmation</Typography>
-    </Container>;
-  };
+    </Container>
+  );
 
   const Form = () => (activeStep === 0 ? <Address /> : <Payment />);
   return (

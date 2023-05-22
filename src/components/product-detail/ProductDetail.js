@@ -44,7 +44,7 @@ const ProductDetail = () => {
       setProduct(response.data);
     };
     getProduct();
-  }, [productId]);
+  }, [productId, options]);
 
   const { title, image, price, description, category } = product;
 
