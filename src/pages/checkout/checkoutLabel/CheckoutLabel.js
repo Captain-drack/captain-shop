@@ -13,7 +13,7 @@ import Payment from "../Payment";
 const steps = ["Billing address", "Payment details"];
 
 const Checkout = () => {
-  const [activeStep, setActiveStep] = useState(0);
+  const [activeStep] = useState(0);
 
   const Confirmation = () => (
     <Container>
